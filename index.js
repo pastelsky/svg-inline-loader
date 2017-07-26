@@ -60,7 +60,7 @@ function SVGInlineLoader(content) {
     this.cacheable && this.cacheable();
     this.value = content;
     // Configuration
-    var query = loaderUtils.parseQuery(this.query);
+    var query = loaderUtils.getOptions(this)
 
     return "module.exports = " + JSON.stringify(getExtractedSVG(content, query));
 }
